@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public interface Testable {
 
-	String MESSAGE = "test message";
+	String MESSAGE = "test.txt message";
 	int COUNTER = 100000;
 
 	void testMethod();

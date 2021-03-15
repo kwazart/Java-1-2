@@ -11,7 +11,7 @@ public class MyClass1 implements Testable {
 
 	@Override
 	public void testMethod() {
-		System.out.println("into test method-01 class-1");
+		System.out.println("into test.txt method-01 class-1");
 	}
 
 	@Override

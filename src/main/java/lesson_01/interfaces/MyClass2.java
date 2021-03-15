@@ -3,7 +3,7 @@ package lesson_01.interfaces;
 public class MyClass2 implements Testable {
 	@Override
 	public void testMethod() {
-		System.out.println("into test method-01 class-2");
+		System.out.println("into test.txt method-01 class-2");
 	}
 
 	@Override
