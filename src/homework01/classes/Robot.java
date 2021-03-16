@@ -6,6 +6,17 @@ public class Robot implements Movable {
 
 	private int runLength = 200;
 	private int jumpHeight = 3;
+	private boolean done = true;
+
+	@Override
+	public boolean isDone() {
+		return done;
+	}
+
+	@Override
+	public void setDone(boolean done) {
+		this.done = done;
+	}
 
 	@Override
 	public boolean run(int length) {
@@ -27,5 +38,11 @@ public class Robot implements Movable {
 			System.out.println("Робот не смог перепрыгнуть стену");
 			return false;
 		}
+	}
+
+	@Override
+	public boolean swim(int length) {
+		System.out.println("Робот попытался плыть но заржавел");
+		return false;
 	}
 }

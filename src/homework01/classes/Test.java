@@ -7,14 +7,21 @@ public class Test {
 
 		Movable[] movables = {new Cat(), new Human(), new Robot()};
 
-		Difficulty[] difficulties = {new Wall(1), new Treadmill(100)};
+		Difficulty[] difficulties = {new Wall(1), new Track(20), new Water(100)};
 
 		for (Movable m : movables) {
-			if (!m.jump(difficulties[0].getValue())) {
-				continue;
+			for (Difficulty d : difficulties) {
+				if (!d.overcome(m)) {
+					m.setDone(false);
+					break;
+				}
 			}
-			if (!m.run(difficulties[1].getValue())) {
+		}
 
+		for (Movable m : movables) {
+			if (m.isDone()) {
+				System.out.println("");
+				System.out.println(m.getClass().getSimpleName() + " прошёл дистанцию");
 			}
 		}
 	}

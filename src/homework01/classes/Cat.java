@@ -6,6 +6,17 @@ public class Cat implements Movable {
 
 	private int runLength = 80;
 	private int jumpHeight = 2;
+	private boolean done = true;
+
+	@Override
+	public boolean isDone() {
+		return done;
+	}
+
+	@Override
+	public void setDone(boolean done) {
+		this.done = done;
+	}
 
 	@Override
 	public boolean run(int length) {
@@ -27,5 +38,11 @@ public class Cat implements Movable {
 			System.out.println("Кошка умная и не стала прыгать так высоко");
 			return false;
 		}
+	}
+
+	@Override
+	public boolean swim(int length) {
+		System.out.println("Кошка не умеет плавать");
+		return false;
 	}
 }

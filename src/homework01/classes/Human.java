@@ -6,6 +6,18 @@ public class Human implements Movable {
 
 	private int runLength = 1000;
 	private int jumpHeight = 1;
+	private int swimLength = 50;
+	private boolean done = true;
+
+	@Override
+	public boolean isDone() {
+		return done;
+	}
+
+	@Override
+	public void setDone(boolean done) {
+		this.done = done;
+	}
 
 	@Override
 	public boolean run(int length) {
@@ -25,6 +37,16 @@ public class Human implements Movable {
 			return true;
 		} else {
 			System.out.println("Человек подпрыгнул, но врезался в высокую стену");
+			return false;
+		}
+	}
+
+	@Override
+	public boolean swim(int length) {
+		if (swimLength <= length) {
+			System.out.println("Человек проплыл " + length + " метров");
+			return true;
+		} else {
 			return false;
 		}
 	}
