@@ -43,7 +43,7 @@ public class Human implements Movable {
 
 	@Override
 	public boolean swim(int length) {
-		if (swimLength <= length) {
+		if (length <= swimLength) {
 			System.out.println("Человек проплыл " + length + " метров");
 			return true;
 		} else {

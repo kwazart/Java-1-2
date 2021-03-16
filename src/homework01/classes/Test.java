@@ -7,7 +7,7 @@ public class Test {
 
 		Movable[] movables = {new Cat(), new Human(), new Robot()};
 
-		Difficulty[] difficulties = {new Wall(1), new Track(20), new Water(100)};
+		Difficulty[] difficulties = {new Wall(1), new Track(20), new Water(50)};
 
 		for (Movable m : movables) {
 			for (Difficulty d : difficulties) {
