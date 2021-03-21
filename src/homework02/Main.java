@@ -6,15 +6,10 @@ import homework02.exceptions.MyArraySizeException;
 public class Main {
 
 	public static void main(String[] args) {
-		String[][] array = {
-				{"1", "2", "3", "4"},
-				{"5", "6", "7", "8"},
-				{"9", "10", "11", "12"},
-				{"13", "14", "15", "16"}
-		};
+
+		String[][] array = arrayInit();
 
 //	3. В методе main() вызвать полученный метод, обработать возможные исключения MySizeArrayException и MyArrayDataException, и вывести результат расчета.
-
 		try {
 			method1(array);
 		} catch (MyArrayDataException e) {
@@ -22,6 +17,17 @@ public class Main {
 		} catch (MyArraySizeException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static String[][] arrayInit () {
+		String[][] array = {
+				{"1", "2", "3", "4"},
+				{"5", "6", "7", "8"},
+				{"9", "10", "11", "12"},
+				{"13", "14", "15", "16"}
+		};
+
+		return array;
 	}
 
 //	1. Напишите метод, на вход которого подаётся двумерный строковый массив размером 4х4, при подаче массива другого размера необходимо бросить исключение MyArraySizeException.
@@ -45,7 +51,7 @@ public class Main {
 				try {
 					sum += Integer.parseInt(arr[i][j]);
 				} catch (Exception e) {
-					throw new MyArrayDataException("Неверные данные в ячейке [" + i + "][" + j +"]");
+					throw new MyArrayDataException(i, j);
 				}
 			}
 		}
